@@ -133,7 +133,7 @@
 <body>
 
 <div class="urgency-bar">
-    Seulement quelques personnes à <span class="highlight" id="city-name">votre région</span> ont été sélectionnées, ne manquez pas cette opportunité.
+    Seulement <span class="highlight">quelques personnes</span> ont été sélectionnées, ne manquez pas cette opportunité.
 </div>
 
 <main>
@@ -160,21 +160,6 @@
     </div>
 
 </main>
-
-<script>
-    // Détection de la ville du visiteur via géolocalisation IP (service public, sans clé).
-    fetch('https://ipwho.is/')
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-            var cityEl = document.getElementById('city-name');
-            if (cityEl && data && data.success !== false && data.city) {
-                cityEl.textContent = data.city;
-            }
-        })
-        .catch(function () {
-            // En cas d'échec, le texte par défaut ("votre région") reste affiché.
-        });
-</script>
 
 </body>
 </html>
