@@ -269,21 +269,32 @@
         color: var(--color-accent-hover);
     }
 
-    /* Placeholder do botão/frame de checkout */
-    .button-placeholder {
+    /* Botão de checkout */
+    .cta-button {
+        display: block;
         width: 100%;
-        min-height: 70px;
-        background-color: var(--color-bg-alt);
-        border: 2px dashed var(--color-success);
+        background-color: #0b6e34;
+        border: none;
         border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 15px;
         text-align: center;
-        padding: 16px;
-        color: var(--color-success);
-        font-weight: 700;
-        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        padding: 18px 20px;
+        box-shadow: 0 2px 6px rgba(11, 110, 52, 0.3);
+        transition: background-color 0.15s ease;
+        animation: cta-pulse 2.6s ease-in-out infinite;
+    }
+    .cta-button:hover { background-color: #0a5c2b; }
+    @keyframes cta-pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+    @media (min-width: 480px) {
+        .cta-button { font-size: 17px; }
     }
 </style>
 </head>
@@ -402,13 +413,10 @@
     </div>
 
     <!--
-        EMPLACEMENT DU BOUTON / FRAME DE PAIEMENT (UP3)
-        Remplacez ce bloc .button-placeholder par le frame/iframe
-        du bouton de checkout que vous enverrez.
+        LIEN DE PAIEMENT (UP3)
+        Remplacez href="#" par le lien réel de checkout dès que vous l'aurez.
     -->
-    <div class="button-placeholder">
-        Espace réservé — bouton / frame de paiement à venir
-    </div>
+    <a href="#" id="cta-button" class="cta-button">Oui, je veux retrouver une peau ferme et tonique</a>
 
 </div>
 
